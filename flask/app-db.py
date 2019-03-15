@@ -3,7 +3,7 @@ from psycopg2.pool import SimpleConnectionPool
 from contextlib import contextmanager
 import json
 
-dbConnection = "dbname='flashes' user='postgres' host='localhost' password='postgres'"
+dbConnection = "dbname='postgres' user='postgres' host='live-score.cfrcolph1w1u.us-east-2.rds.amazonaws.com' password='postgres'"
 
 # pool define with 10 live connections
 connectionpool = SimpleConnectionPool(1,10,dsn=dbConnection)
@@ -32,4 +32,4 @@ def view_score():
         print("error in executing with exception: ", e)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', debug=True)
