@@ -22,11 +22,12 @@
 
     </header> 
     <main class="el-main">
-       <el-steps :active="1">
-          <el-step title="Step 1" description="Some description"></el-step>
-          <el-step title="Step 2" description="Some description"></el-step>
-          <el-step title="Step 3" description="Some description"></el-step>
-        </el-steps>  
+       <el-tabs :tab-position="tabPosition" style="height: 200px;">
+        <el-tab-pane label="User">User</el-tab-pane>
+        <el-tab-pane label="Config">Config</el-tab-pane>
+        <el-tab-pane label="Role">Role</el-tab-pane>
+        <el-tab-pane label="Task">Task</el-tab-pane>
+      </el-tabs> 
     </main> 
     <footer class="el-footer" style="height: 60px;">Footer</footer>
     </section>
@@ -34,8 +35,13 @@
 </template>
 
 <script>
-
-
+export default {
+    data() {
+      return {
+        tabPosition: 'left'
+      };
+    }
+  };
 </script>
 <style>
 @import url("//unpkg.com/element-ui@2.6.1/lib/theme-chalk/index.css");
